@@ -143,25 +143,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		1D6058960D05DD3D006BFB54 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1D6058950D05DD3D006BFB54 /* Main.storyboard */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1D6058980D05DD3D006BFB54 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1D6058970D05DD3D006BFB54 /* LaunchScreen.storyboard */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		1D6058880D05DD3D006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -338,7 +319,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D60589C0D05DD3D006BFB54 /* Debug */,
-				1D60589D0D05DD3D006BFB54 /* Release */,
+				1D60589D05DD3D006BFB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
