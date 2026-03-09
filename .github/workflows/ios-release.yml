@@ -21,21 +21,33 @@ jobs:
           cd ios/Legado
           pod install || echo "No Podfile found, skipping pod install"
 
-      - name: Build and archive iOS app
+      - name: Build iOS app
         run: |
           cd ios/Legado
-          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos -archivePath ../build/Legado.xcarchive archive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ALWAYS_SEARCH_USER_PATHS=NO
+          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ALWAYS_SEARCH_USER_PATHS=NO
 
-      - name: Export IPA
+      - name: Find built app
         run: |
           cd ios
-          mkdir -p build
-          xcodebuild -exportArchive -archivePath build/Legado.xcarchive -exportPath build -exportOptionsPlist Legado/exportOptions.plist CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          find . -name "Legado.app" -type d
 
-      - name: List files after export
+      - name: Package IPA
         run: |
           cd ios
-          ls -la build
+          mkdir -p build/Payload
+          APP_PATH=$(find . -name "Legado.app" -type d | head -1)
+          if [ -z "$APP_PATH" ]; then
+            echo "Error: Legado.app not found"
+            exit 1
+          fi
+          cp -r "$APP_PATH" build/Payload/
+          cd build
+          zip -r Legado.ipa Payload
+
+      - name: List files after packaging
+        run: |
+          cd ios/build
+          ls -la
 
       - name: Organize the Files
         run: |
