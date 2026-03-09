@@ -24,13 +24,13 @@ jobs:
       - name: Build iOS app
         run: |
           cd ios/Legado
-          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos -archivePath ../build/Legado.xcarchive archive
+          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos -archivePath ../build/Legado.xcarchive archive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
       - name: Export IPA
         run: |
           cd ios
           mkdir -p build
-          xcodebuild -exportArchive -archivePath build/Legado.xcarchive -exportPath build -exportOptionsPlist Legado/exportOptions.plist
+          xcodebuild -exportArchive -archivePath build/Legado.xcarchive -exportPath build -exportOptionsPlist Legado/exportOptions.plist CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
       - name: Organize the Files
         run: |
