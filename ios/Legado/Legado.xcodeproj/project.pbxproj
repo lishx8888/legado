@@ -72,7 +72,7 @@
 			buildPhases = (
 				1D60588B0D05DD3D006BFB54 /* Sources */,
 				1D60588C0D05DD3D006BFB54 /* Frameworks */,
-				1D60588D05DD3D006BFB54 /* Resources */,
+				1D60588D0D05DD3D006BFB54 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -130,7 +130,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1D60588D05DD3D006BFB54 /* Resources */ = {
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -193,7 +193,7 @@
 			};
 			name = Debug;
 		};
-		1D60589D05DD3D006BFB54 /* Release */ = {
+		1D60589D0D05DD3D006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -226,7 +226,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D60589C0D05DD3D006BFB54 /* Debug */,
-				1D60589D05DD3D006BFB54 /* Release */,
+				1D60589D0D05DD3D006BFB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
