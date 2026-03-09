@@ -12,17 +12,6 @@
 		1D6058940D05DD3D006BFB54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058930D05DD3D006BFB54 /* ViewController.swift */; };
 		1D6058960D05DD3D006BFB54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6058950D05DD3D006BFB54 /* Main.storyboard */; };
 		1D6058980D05DD3D006BFB54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6058970D05DD3D006BFB54 /* LaunchScreen.storyboard */; };
-		1D6058A00D05DD3D006BFB54 /* BookshelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60589F0D05DD3D006BFB54 /* BookshelfViewController.swift */; };
-		1D6058A20D05DD3D006BFB54 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A10D05DD3D006BFB54 /* ReaderViewController.swift */; };
-		1D6058A40D05DD3D006BFB54 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A30D05DD3D006BFB54 /* Book.swift */; };
-		1D6058A60D05DD3D006BFB54 /* BookChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A50D05DD3D006BFB54 /* BookChapter.swift */; };
-		1D6058A80D05DD3D006BFB54 /* BookProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A70D05DD3D006BFB54 /* BookProgress.swift */; };
-		1D6058AA0D05DD3D006BFB54 /* BookSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A90D05DD3D006BFB54 /* BookSource.swift */; };
-		1D6058AC0D05DD3D006BFB54 /* ContentRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058AB0D05DD3D006BFB54 /* ContentRule.swift */; };
-		1D6058AE0D05DD3D006BFB54 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058AD05DD3D006BFB54 /* DatabaseManager.swift */; };
-		1D6058B00D05DD3D006BFB54 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058AF05DD3D006BFB54 /* ImageCache.swift */; };
-		1D6058B20D05DD3D006BFB54 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058B10D05DD3D006BFB54 /* NetworkService.swift */; };
-		1D6058B40D05DD3D006BFB54 /* ReadBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058B30D05DD3D006BFB54 /* ReadBook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,17 +22,6 @@
 		1D6058950D05DD3D006BFB54 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1D6058970D05DD3D006BFB54 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D6058990D05DD3D006BFB54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D60589F0D05DD3D006BFB54 /* BookshelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers/BookshelfViewController.swift; sourceTree = "<group>"; };
-		1D6058A10D05DD3D006BFB54 /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers/ReaderViewController.swift; sourceTree = "<group>"; };
-		1D6058A30D05DD3D006BFB54 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/Book.swift; sourceTree = "<group>"; };
-		1D6058A50D05DD3D006BFB54 /* BookChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/BookChapter.swift; sourceTree = "<group>"; };
-		1D6058A70D05DD3D006BFB54 /* BookProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/BookProgress.swift; sourceTree = "<group>"; };
-		1D6058A90D05DD3D006BFB54 /* BookSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/BookSource.swift; sourceTree = "<group>"; };
-		1D6058AB0D05DD3D006BFB54 /* ContentRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/ContentRule.swift; sourceTree = "<group>"; };
-		1D6058AD05DD3D006BFB54 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/DatabaseManager.swift; sourceTree = "<group>"; };
-		1D6058AF05DD3D006BFB54 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/ImageCache.swift; sourceTree = "<group>"; };
-		1D6058B10D05DD3D006BFB54 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/NetworkService.swift; sourceTree = "<group>"; };
-		1D6058B30D05DD3D006BFB54 /* ReadBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/ReadBook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,17 +52,6 @@
 				1D6058950D05DD3D006BFB54 /* Main.storyboard */,
 				1D6058970D05DD3D006BFB54 /* LaunchScreen.storyboard */,
 				1D6058990D05DD3D006BFB54 /* Info.plist */,
-				1D60589F0D05DD3D006BFB54 /* BookshelfViewController.swift */,
-				1D6058A10D05DD3D006BFB54 /* ReaderViewController.swift */,
-				1D6058A30D05DD3D006BFB54 /* Book.swift */,
-				1D6058A50D05DD3D006BFB54 /* BookChapter.swift */,
-				1D6058A70D05DD3D006BFB54 /* BookProgress.swift */,
-				1D6058A90D05DD3D006BFB54 /* BookSource.swift */,
-				1D6058AB0D05DD3D006BFB54 /* ContentRule.swift */,
-				1D6058AD05DD3D006BFB54 /* DatabaseManager.swift */,
-				1D6058AF05DD3D006BFB54 /* ImageCache.swift */,
-				1D6058B10D05DD3D006BFB54 /* NetworkService.swift */,
-				1D6058B30D05DD3D006BFB54 /* ReadBook.swift */,
 			);
 			path = Legado;
 			sourceTree = "<group>";
@@ -157,17 +124,6 @@
 				1D605890D05DD3D006BFB54 /* AppDelegate.swift in Sources */,
 				1D6058920D05DD3D006BFB54 /* SceneDelegate.swift in Sources */,
 				1D6058940D05DD3D006BFB54 /* ViewController.swift in Sources */,
-				1D6058A00D05DD3D006BFB54 /* BookshelfViewController.swift in Sources */,
-				1D6058A20D05DD3D006BFB54 /* ReaderViewController.swift in Sources */,
-				1D6058A40D05DD3D006BFB54 /* Book.swift in Sources */,
-				1D6058A60D05DD3D006BFB54 /* BookChapter.swift in Sources */,
-				1D6058A80D05DD3D006BFB54 /* BookProgress.swift in Sources */,
-				1D6058AA0D05DD3D006BFB54 /* BookSource.swift in Sources */,
-				1D6058AC0D05DD3D006BFB54 /* ContentRule.swift in Sources */,
-				1D6058AE0D05DD3D006BFB54 /* DatabaseManager.swift in Sources */,
-				1D6058B00D05DD3D006BFB54 /* ImageCache.swift in Sources */,
-				1D6058B20D05DD3D006BFB54 /* NetworkService.swift in Sources */,
-				1D6058B40D05DD3D006BFB54 /* ReadBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
