@@ -35,6 +35,19 @@
 		};
 /* End PBXFrameworksBuildPhase section */
 
+/* Begin PBXResourcesBuildPhase section */
+		1D6058A00D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6058960D05DD3D006BFB54 /* Main.storyboard in Resources */,
+				1D6058980D05DD3D006BFB54 /* LaunchScreen.storyboard in Resources */,
+				1D60589A0D05DD3D006BFB54 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXGroup section */
 		1D6058850D05DD3D006BFB54 = {
 			isa = PBXGroup;
@@ -73,7 +86,7 @@
 			buildPhases = (
 				1D60588B0D05DD3D006BFB54 /* Sources */,
 				1D60588C0D05DD3D006BFB54 /* Frameworks */,
-				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D6058A00D05DD3D006BFB54 /* Resources */,
 			);
 			buildRules = (
 			);
