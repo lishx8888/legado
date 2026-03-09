@@ -26,11 +26,21 @@ jobs:
           cd ios/Legado
           xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
+      - name: Find built app
+        run: |
+          cd ios
+          find . -name "Legado.app" -type d
+
       - name: Package IPA
         run: |
           cd ios
           mkdir -p build/Payload
-          cp -r Legado/build/Release-iphoneos/Legado.app build/Payload/ || cp -r Legado/Legado/build/Release-iphoneos/Legado.app build/Payload/
+          APP_PATH=$(find . -name "Legado.app" -type d | head -1)
+          if [ -z "$APP_PATH" ]; then
+            echo "Error: Legado.app not found"
+            exit 1
+          fi
+          cp -r "$APP_PATH" build/Payload/
           cd build
           zip -r Legado.ipa Payload
 
