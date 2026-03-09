@@ -24,7 +24,14 @@ jobs:
       - name: Build iOS app
         run: |
           cd ios/Legado
-          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -verbose
+
+      - name: List directories after build
+        run: |
+          cd ios
+          ls -la
+          ls -la Legado
+          ls -la Legado/build || echo "Build directory not found"
 
       - name: Find built app
         run: |
