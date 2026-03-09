@@ -30,7 +30,7 @@ jobs:
         run: |
           cd ios
           mkdir -p build/Payload
-          cp -r Legado/build/Release-iphoneos/Legado.app build/Payload/
+          cp -r Legado/build/Release-iphoneos/Legado.app build/Payload/ || cp -r Legado/Legado/build/Release-iphoneos/Legado.app build/Payload/
           cd build
           zip -r Legado.ipa Payload
 
