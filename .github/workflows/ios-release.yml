@@ -1,0 +1,56 @@
+name: iOS Release Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    env:
+      VERSION: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.0'
+
+      - name: Install dependencies
+        run: |
+          cd ios/Legado
+          pod install || echo "No Podfile found, skipping pod install"
+
+      - name: Build iOS app
+        run: |
+          cd ios/Legado
+          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos -archivePath ../build/Legado.xcarchive archive
+
+      - name: Export IPA
+        run: |
+          cd ios
+          mkdir -p build
+          xcodebuild -exportArchive -archivePath build/Legado.xcarchive -exportPath build -exportOptionsPlist Legado/exportOptions.plist
+
+      - name: Organize the Files
+        run: |
+          mkdir -p ${{ github.workspace }}/ipa/
+          cp -rf ${{ github.workspace }}/ios/build/*.ipa ${{ github.workspace }}/ipa/
+
+      - name: Upload IPA To Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: legado_ios
+          path: ${{ github.workspace }}/ipa/*.ipa
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: legado_ios_${{ env.VERSION }}
+          tag_name: ios_${{ env.VERSION }}
+          body_path: ${{ github.workspace }}/CHANGELOG.md
+          draft: false
+          prerelease: false
+          files: ${{ github.workspace }}/ipa/legado_*.ipa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
