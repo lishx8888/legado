@@ -21,10 +21,19 @@ jobs:
           cd ios/Legado
           pod install || echo "No Podfile found, skipping pod install"
 
-      - name: Build for testing
+      - name: Build iOS app
         run: |
           cd ios/Legado
-          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos build-for-testing CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -verbose
+
+      - name: List all files after build
+        run: |
+          cd ios
+          find . -type f -name "*.app" | head -20
+          find . -type d -name "*.app" | head -20
+          ls -la
+          ls -la Legado
+          ls -la Legado/build || echo "Build directory not found"
 
       - name: Package IPA
         run: |
