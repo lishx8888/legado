@@ -14,39 +14,28 @@ jobs:
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: 'latest'
+          xcode-version: '15.0'
 
       - name: Install dependencies
         run: |
           cd ios/Legado
           pod install || echo "No Podfile found, skipping pod install"
 
-      - name: Build iOS app
+      - name: Build and archive iOS app
         run: |
           cd ios/Legado
-          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -verbose
+          xcodebuild -project Legado.xcodeproj -scheme Legado -configuration Release -sdk iphoneos -archivePath ../build/Legado.xcarchive archive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
-      - name: List all files after build
+      - name: Export IPA
         run: |
           cd ios
-          find . -type f -name "*.app" | head -20
-          find . -type d -name "*.app" | head -20
-          ls -la
-          ls -la Legado
-          ls -la Legado/build || echo "Build directory not found"
+          mkdir -p build
+          xcodebuild -exportArchive -archivePath build/Legado.xcarchive -exportPath build -exportOptionsPlist Legado/exportOptions.plist CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
-      - name: Package IPA
+      - name: List files after export
         run: |
           cd ios
-          mkdir -p build/Payload
-          APP_PATH=$(find . -name "Legado.app" -type d | head -1)
-          if [ -z "$APP_PATH" ]; then
-            echo "Error: Legado.app not found"
-            exit 1
-          fi
-          cp -r "$APP_PATH" build/Payload/
-          cd build
-          zip -r Legado.ipa Payload
+          ls -la build
 
       - name: Organize the Files
         run: |
